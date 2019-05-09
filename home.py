@@ -5,8 +5,14 @@ from PIL import ImageDraw
 #   自动换行模块
 import textwrap
 #   文本样式
-
+import pandas as pd
+import xlrd
+#   表格处理模块
 text_name = str(input("输入名称："))
+
+def excel_num():
+    num = pd.read_excel("C:/name.xlsx")
+    print(num.shape)
 
 def Image_io(text_nane):
     #   获取图片
@@ -29,4 +35,5 @@ def Image_io(text_nane):
 
 
 if __name__ == '__main__':
-    Image_io(text_name)
+    #   Image_io(text_name)
+    excel_num()
