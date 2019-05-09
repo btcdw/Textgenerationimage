@@ -1,4 +1,4 @@
-#   Pil和Pillow不能同时存在,下面使用的是Pillow模块
+#   Pil和Pillow不能同时存在,下面使用的是Pillow模块.
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
