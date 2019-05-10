@@ -8,13 +8,14 @@ import textwrap
 import pandas as pd
 import xlrd
 #   表格处理模块
-text_name = str(input("输入名称："))
+#   text_name = str(input("输入名称："))
 
 def excel_num():
-    num = pd.read_excel("C:/name.xlsx")
-    print(num.shape)
+    num = pd.read_excel("C:/name1.xlsx")
+    data_1 = num["A"][0]
+    return data_1
 
-def Image_io(text_nane):
+def Image_io(text_name):
     #   获取图片
     im = Image.open("999.png")
 
@@ -35,5 +36,5 @@ def Image_io(text_nane):
 
 
 if __name__ == '__main__':
-    #   Image_io(text_name)
+    Image_io(text_name)
     excel_num()
