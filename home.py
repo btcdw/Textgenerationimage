@@ -10,10 +10,14 @@ import xlrd
 #   表格处理模块
 #   text_name = str(input("输入名称："))
 
+
 def excel_num():
+    #   获取表格数据
     num = pd.read_excel("C:/name1.xlsx")
-    data_1 = num["A"][0]
-    return data_1
+    text_name = num["A"][0]
+    #   得到表格第一列第0个值给到 text_name
+    return text_name
+
 
 def Image_io(text_name):
     #   获取图片
@@ -26,7 +30,7 @@ def Image_io(text_name):
     draw = ImageDraw.Draw(im)
 
     #   写入坐标，换行，内容，字色，变量
-    draw.text((446, 906), textwrap.fill(text_nane, width=10),  fill=(251, 198, 0), font=myfont)
+    draw.text((446, 906), textwrap.fill(text_name, width=10),  fill=(251, 198, 0), font=myfont)
 
     #   显示此图像。此方法主要用于调试目的。
     im.show()
@@ -36,5 +40,6 @@ def Image_io(text_name):
 
 
 if __name__ == '__main__':
+    text_name = excel_num()
+    print(text_name)
     Image_io(text_name)
-    excel_num()
