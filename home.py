@@ -6,20 +6,18 @@ from PIL import ImageDraw
 import textwrap
 #   文本样式
 import pandas as pd
-import xlrd
-#   表格处理模块
-#   text_name = str(input("输入名称："))
+import time
 
 
-def excel_num():
+def excel_num(i):
     #   获取表格数据
     num = pd.read_excel("C:/name1.xlsx")
-    text_name = num["A"][0]
+    text_name = num["A"][i]
     #   得到表格第一列第0个值给到 text_name
     return text_name
 
 
-def Image_io(text_name):
+def Image_io(text_name, png_name):
     #   获取图片
     im = Image.open("999.png")
 
@@ -36,10 +34,11 @@ def Image_io(text_name):
     im.show()
 
     #   输出图片
-    im.save('new.png')
-
+    im.save(png_name + ".png")
 
 if __name__ == '__main__':
-    text_name = excel_num()
-    print(text_name)
-    Image_io(text_name)
+    for i in range(90):
+        text_name = png_name = excel_num(i)
+        print(text_name)
+        Image_io(text_name, png_name)
+        time.sleep(5)
