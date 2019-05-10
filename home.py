@@ -28,7 +28,9 @@ def Image_io(text_name, png_name):
     draw = ImageDraw.Draw(im)
 
     #   写入坐标，换行，内容，字色，变量
-    draw.text((446, 906), textwrap.fill(text_name, width=10),  fill=(251, 198, 0), font=myfont)
+    #   ljust(),center(),rjust()函数实现输出的字符串左对齐、居中、右对齐，参数默认空格，10就是10个为一套居中
+
+    draw.text((446, 906), textwrap.fill(text_name.center(1), width=40),  fill=(251, 198, 0), font=myfont)
 
     #   显示此图像。此方法主要用于调试目的。
     im.show()
